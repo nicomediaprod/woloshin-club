@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Base night gradient -->
+    <radialGradient id="s01-base" cx="65%" cy="35%" r="75%">
+      <stop offset="0%"   stop-color="#1A1410"/>
+      <stop offset="35%"  stop-color="#0F1B2D"/>
+      <stop offset="70%"  stop-color="#06080F"/>
+      <stop offset="100%" stop-color="#02030A"/>
+    </radialGradient>
+
+    <!-- Warm volumetric haze drifting from upper-right -->
+    <radialGradient id="s01-haze-1" cx="78%" cy="22%" r="55%">
+      <stop offset="0%"   stop-color="#F5A623" stop-opacity="0.22"/>
+      <stop offset="25%"  stop-color="#C9A24A" stop-opacity="0.14"/>
+      <stop offset="55%"  stop-color="#1A1410" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#06080F" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Secondary cooler steam haze drifting across mid-left -->
+    <radialGradient id="s01-haze-2" cx="22%" cy="68%" r="50%">
+      <stop offset="0%"   stop-color="#C9A24A" stop-opacity="0.10"/>
+      <stop offset="40%"  stop-color="#0F1B2D" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#06080F" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Vertical embers falloff -->
+    <linearGradient id="s01-floor" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%"   stop-color="#F5A623" stop-opacity="0.05"/>
+      <stop offset="40%"  stop-color="#1A1410" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#06080F" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Film grain via fractal noise -->
+    <filter id="s01-grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 0.95
+                              0 0 0 0 0.85
+                              0 0 0 0 0.55
+                              0 0 0 0.18 0"/>
+    </filter>
+
+    <!-- Soft volumetric steam (low-frequency turbulence) -->
+    <filter id="s01-steam" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008 0.025" numOctaves="3" seed="3"/>
+      <feColorMatrix values="0 0 0 0 0.96
+                              0 0 0 0 0.65
+                              0 0 0 0 0.28
+                              0 0 0 0.55 0"/>
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+
+    <filter id="s01-blur-soft">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+  </defs>
+
+  <!-- 1. Base wash -->
+  <rect width="1920" height="1080" fill="url(#s01-base)"/>
+
+  <!-- 2. Volumetric steam -->
+  <rect width="1920" height="1080" filter="url(#s01-steam)" opacity="0.45"/>
+
+  <!-- 3. Warm haze light from upper-right -->
+  <rect width="1920" height="1080" fill="url(#s01-haze-1)"/>
+
+  <!-- 4. Cool secondary haze -->
+  <rect width="1920" height="1080" fill="url(#s01-haze-2)"/>
+
+  <!-- 5. Floor warmth lift -->
+  <rect width="1920" height="1080" fill="url(#s01-floor)"/>
+
+  <!-- 6. Single hot ember point upper-right (the "light source") -->
+  <circle cx="1500" cy="220" r="320" fill="#F5A623" opacity="0.10" filter="url(#s01-blur-soft)"/>
+  <circle cx="1500" cy="220" r="120" fill="#F5E9D3" opacity="0.14" filter="url(#s01-blur-soft)"/>
+  <circle cx="1500" cy="220" r="40"  fill="#F5E9D3" opacity="0.20" filter="url(#s01-blur-soft)"/>
+
+  <!-- 7. Scattered embers -->
+  <g opacity="0.6">
+    <circle cx="1620" cy="380" r="1.2" fill="#F5A623"/>
+    <circle cx="1380" cy="510" r="0.9" fill="#F5E9D3"/>
+    <circle cx="1710" cy="640" r="1.4" fill="#C9A24A"/>
+    <circle cx="1240" cy="280" r="0.8" fill="#F5A623"/>
+    <circle cx="1820" cy="780" r="1.1" fill="#F5E9D3"/>
+    <circle cx="1100" cy="420" r="0.7" fill="#C9A24A"/>
+    <circle cx="1450" cy="720" r="0.9" fill="#F5A623"/>
+    <circle cx="1280" cy="860" r="1.0" fill="#F5E9D3"/>
+    <circle cx="1640" cy="180" r="0.6" fill="#C9A24A"/>
+    <circle cx="980"  cy="620" r="0.8" fill="#F5A623"/>
+  </g>
+
+  <!-- 8. Vignette to keep edges dark -->
+  <radialGradient id="s01-vig" cx="50%" cy="50%" r="75%">
+    <stop offset="60%"  stop-color="#000000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0.55"/>
+  </radialGradient>
+  <rect width="1920" height="1080" fill="url(#s01-vig)"/>
+
+  <!-- 9. Film grain over everything -->
+  <rect width="1920" height="1080" filter="url(#s01-grain)" opacity="0.55"/>
+</svg>

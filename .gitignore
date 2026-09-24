@@ -1,0 +1,27 @@
+# Node / build artifacts
+node_modules/
+dist/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Local secrets (if any added later)
+.env
+.env.local
+
+# DO NOT commit these — too large / redundant
+archive/preview-*.png
+agents/*.log
+.cache/
+
+# Keep these tracked:
+# - archive/index.html (v1 reference, ~955 lines)
+# - agents/ (process artifacts, read by AI agents)
+# - backgrounds/ (SVG bg files, referenced by CSS)

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="S06 The Ritual background — vertical grain, almost pure black with subtle warm amber gradient along thin center line, 9:16 portrait, tileable">
+  <defs>
+    <!-- Near-pure-black base -->
+    <linearGradient id="g06-base" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#06080F"/>
+      <stop offset="100%" stop-color="#04060C"/>
+    </linearGradient>
+
+    <!-- Thin warm center-line glow -->
+    <linearGradient id="g06-centerline" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#F5A623" stop-opacity="0"/>
+      <stop offset="18%" stop-color="#C9A24A" stop-opacity="0.10"/>
+      <stop offset="50%" stop-color="#F5A623" stop-opacity="0.16"/>
+      <stop offset="82%" stop-color="#C9A24A" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#F5A623" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Edge vignette (horizontal) -->
+    <radialGradient id="g06-edge" cx="50%" cy="50%" r="68%">
+      <stop offset="40%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.55"/>
+    </radialGradient>
+
+    <!-- Vertical grain texture (tall, stretched) -->
+    <filter id="g06-vertgrain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.06 0.9" numOctaves="2" seed="13" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="
+        0 0 0 0 0.06
+        0 0 0 0 0.06
+        0 0 0 0 0.08
+        0 0 0 0.45 0"/>
+    </filter>
+
+    <!-- Heavy grain -->
+    <filter id="g06-grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="2" seed="29" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="
+        0 0 0 0 0.06
+        0 0 0 0 0.06
+        0 0 0 0 0.08
+        0 0 0 0.55 0"/>
+    </filter>
+
+    <filter id="g06-blur" x="-30%" y="-10%" width="160%" height="120%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="1600" fill="url(#g06-base)"/>
+
+  <!-- Vertical grain texture -->
+  <rect width="900" height="1600" filter="url(#g06-vertgrain)" style="mix-blend-mode:screen" opacity="0.45"/>
+
+  <!-- Thin warm center line, narrow and tall -->
+  <g filter="url(#g06-blur)">
+    <rect x="438" y="0" width="24" height="1600" fill="url(#g06-centerline)"/>
+  </g>
+  <!-- Sharper inner core -->
+  <rect x="447" y="200" width="6" height="1200" fill="#C9A24A" opacity="0.18"/>
+
+  <!-- Edge vignette -->
+  <rect width="900" height="1600" fill="url(#g06-edge)"/>
+
+  <!-- Heavy grain -->
+  <rect width="900" height="1600" filter="url(#g06-grain)" style="mix-blend-mode:screen" opacity="0.5"/>
+</svg>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="S07 The Privileges background — deep midnight velvet darkness with a faint warm gold gradient fade from top edge">
+  <defs>
+    <!-- Midnight velvet base -->
+    <linearGradient id="g07-base" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#0F1B2D"/>
+      <stop offset="40%" stop-color="#06080F"/>
+      <stop offset="100%" stop-color="#04060C"/>
+    </linearGradient>
+
+    <!-- Faint gold gradient fade from top edge — like velvet curtain edge -->
+    <linearGradient id="g07-goldfade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#C9A24A" stop-opacity="0.16"/>
+      <stop offset="8%"  stop-color="#C9A24A" stop-opacity="0.10"/>
+      <stop offset="22%" stop-color="#F5A623" stop-opacity="0.05"/>
+      <stop offset="50%" stop-color="#1A1410" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#06080F" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Edge vignette -->
+    <radialGradient id="g07-vig" cx="50%" cy="50%" r="76%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.50"/>
+    </radialGradient>
+
+    <!-- Subtle velvet sheen -->
+    <filter id="g07-velvet" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="37" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="
+        0 0 0 0 0.10
+        0 0 0 0 0.08
+        0 0 0 0 0.06
+        0 0 0 0.35 0"/>
+    </filter>
+
+    <!-- Heavy grain -->
+    <filter id="g07-grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="2" seed="41" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="
+        0 0 0 0 0.06
+        0 0 0 0 0.06
+        0 0 0 0 0.08
+        0 0 0 0.55 0"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#g07-base)"/>
+
+  <!-- Velvet sheen -->
+  <rect width="1600" height="900" filter="url(#g07-velvet)" style="mix-blend-mode:screen" opacity="0.45"/>
+
+  <!-- Gold gradient from top -->
+  <rect width="1600" height="900" fill="url(#g07-goldfade)"/>
+
+  <!-- Edge vignette -->
+  <rect width="1600" height="900" fill="url(#g07-vig)"/>
+
+  <!-- Heavy grain -->
+  <rect width="1600" height="900" filter="url(#g07-grain)" style="mix-blend-mode:screen" opacity="0.5"/>
+</svg>

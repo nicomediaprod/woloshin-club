@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="S04 The House background — abstract ritual stone-wood texture, dark with warm earth undertone">
+  <defs>
+    <!-- Base deep-night with subtle warm undertone -->
+    <linearGradient id="g04-base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"  stop-color="#0F1B2D"/>
+      <stop offset="60%" stop-color="#1A1410"/>
+      <stop offset="100%" stop-color="#06080F"/>
+    </linearGradient>
+
+    <!-- Warm amber haze, very faint, drifting across the frame -->
+    <radialGradient id="g04-haze" cx="62%" cy="38%" r="55%">
+      <stop offset="0%"  stop-color="#F5A623" stop-opacity="0.10"/>
+      <stop offset="30%" stop-color="#C9A24A" stop-opacity="0.05"/>
+      <stop offset="65%" stop-color="#1A1410" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#06080F" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Subtle umber counter-light lower-left -->
+    <radialGradient id="g04-umber" cx="22%" cy="78%" r="48%">
+      <stop offset="0%"  stop-color="#1A1410" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#0F1B2D" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#06080F" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Vignette -->
+    <radialGradient id="g04-vig" cx="50%" cy="50%" r="78%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.55"/>
+    </radialGradient>
+
+    <!-- Stone-wood texture: layered turbulence with subtle contrast -->
+    <filter id="g04-stone" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.04" numOctaves="3" seed="11" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="
+        0 0 0 0 0.10
+        0 0 0 0 0.08
+        0 0 0 0 0.06
+        0 0 0 0.85 0"/>
+    </filter>
+
+    <!-- Heavy grain -->
+    <filter id="g04-grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.0" numOctaves="2" seed="23" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="
+        0 0 0 0 0.06
+        0 0 0 0 0.06
+        0 0 0 0 0.08
+        0 0 0 0.5 0"/>
+    </filter>
+
+    <filter id="g04-blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#g04-base)"/>
+  <rect width="1600" height="900" fill="url(#g04-umber)"/>
+
+  <!-- Abstract stone-wood suggestion: low contrast texture plane -->
+  <g filter="url(#g04-blur)" opacity="0.55">
+    <rect width="1600" height="900" filter="url(#g04-stone)" style="mix-blend-mode:overlay"/>
+  </g>
+
+  <!-- Warm amber haze drift -->
+  <rect width="1600" height="900" fill="url(#g04-haze)"/>
+
+  <!-- Vignette -->
+  <rect width="1600" height="900" fill="url(#g04-vig)"/>
+
+  <!-- Heavy grain -->
+  <rect width="1600" height="900" filter="url(#g04-grain)" style="mix-blend-mode:screen" opacity="0.55"/>
+</svg>

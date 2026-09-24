@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2100 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="S05 The Spaces background — cinematic darkness with subtle firelight from below, embers through fog, ultra-wide 21:9">
+  <defs>
+    <!-- Cinematic midnight base -->
+    <linearGradient id="g05-base" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#06080F"/>
+      <stop offset="60%" stop-color="#0F1B2D"/>
+      <stop offset="100%" stop-color="#0A0E18"/>
+    </linearGradient>
+
+    <!-- Firelight glow rising from bottom-center, wide and diffuse -->
+    <radialGradient id="g05-fire" cx="50%" cy="100%" r="62%" fx="50%" fy="100%">
+      <stop offset="0%"  stop-color="#F5A623" stop-opacity="0.28"/>
+      <stop offset="18%" stop-color="#C9A24A" stop-opacity="0.14"/>
+      <stop offset="45%" stop-color="#1A1410" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#06080F" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Fog suggestion: low contrast horizontal bands -->
+    <linearGradient id="g05-fog" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"  stop-color="#0F1B2D" stop-opacity="0"/>
+      <stop offset="25%" stop-color="#1A1410" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#0F1B2D" stop-opacity="0.10"/>
+      <stop offset="75%" stop-color="#1A1410" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#0F1B2D" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Embers: tiny warm dots near bottom -->
+    <radialGradient id="g05-ember" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#F5A623" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#C9A24A" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#C9A24A" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Strong vignette -->
+    <radialGradient id="g05-vig" cx="50%" cy="50%" r="72%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.65"/>
+    </radialGradient>
+
+    <!-- Fog noise -->
+    <filter id="g05-fogfilter" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008 0.025" numOctaves="3" seed="19" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="
+        0 0 0 0 0.10
+        0 0 0 0 0.08
+        0 0 0 0 0.06
+        0 0 0 0.7 0"/>
+    </filter>
+
+    <!-- Heavy grain -->
+    <filter id="g05-grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="
+        0 0 0 0 0.06
+        0 0 0 0 0.06
+        0 0 0 0 0.08
+        0 0 0 0.55 0"/>
+    </filter>
+
+    <filter id="g05-blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+  </defs>
+
+  <rect width="2100" height="900" fill="url(#g05-base)"/>
+
+  <!-- Firelight rising -->
+  <g filter="url(#g05-blur)">
+    <rect width="2100" height="900" fill="url(#g05-fire)"/>
+  </g>
+
+  <!-- Fog bands -->
+  <g filter="url(#g05-blur)" opacity="0.85">
+    <rect width="2100" height="900" filter="url(#g05-fogfilter)" style="mix-blend-mode:screen"/>
+  </g>
+  <rect width="2100" height="900" fill="url(#g05-fog)" opacity="0.45"/>
+
+  <!-- Scattered embers along the bottom -->
+  <g opacity="0.85">
+    <circle cx="180"  cy="820" r="3.5" fill="url(#g05-ember)"/>
+    <circle cx="340"  cy="855" r="2.5" fill="url(#g05-ember)"/>
+    <circle cx="520"  cy="835" r="4"   fill="url(#g05-ember)"/>
+    <circle cx="760"  cy="868" r="2"   fill="url(#g05-ember)"/>
+    <circle cx="940"  cy="845" r="3"   fill="url(#g05-ember)"/>
+    <circle cx="1080" cy="858" r="2.5" fill="url(#g05-ember)"/>
+    <circle cx="1280" cy="828" r="4"   fill="url(#g05-ember)"/>
+    <circle cx="1480" cy="862" r="2"   fill="url(#g05-ember)"/>
+    <circle cx="1660" cy="838" r="3.5" fill="url(#g05-ember)"/>
+    <circle cx="1840" cy="855" r="2.5" fill="url(#g05-ember)"/>
+    <circle cx="1980" cy="830" r="3"   fill="url(#g05-ember)"/>
+  </g>
+
+  <!-- Vignette -->
+  <rect width="2100" height="900" fill="url(#g05-vig)"/>
+
+  <!-- Heavy grain -->
+  <rect width="2100" height="900" filter="url(#g05-grain)" style="mix-blend-mode:screen" opacity="0.55"/>
+</svg>
