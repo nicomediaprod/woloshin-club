@@ -17,7 +17,8 @@ Woloshin Club landing page — single self-contained HTML file at `/Users/pro/Do
 | v1 (archive/index.html) | ~955 | First Romanian-only build, before audit |
 | v2 | 2,764 | Counter fixes, placeholder S04/S11, scarcity grid integrated |
 | v3 | 3,002 | + 5 in-app fixes (centering, glow, floating numbers, Aston rings, abstract silhouette) + 8 SVG backgrounds wired |
-| **v4 (current)** | **3,424** | + Kurale + Plus Jakarta Sans, RU/RO language toggle (143 attrs each), mobile cinematic, tightened spacing, fixed S10 ring math |
+| v4 | 3,424 | + Kurale + Plus Jakarta Sans, RU/RO language toggle (143 attrs each), mobile cinematic, tightened spacing, fixed S10 ring math |
+| **v5 (current)** | **3,415** | Complete natural copywriting rewrite across all 14 sections (eliminated AI slop, direct human voice), 100% RU/RO parity (145/145), default Russian textContent enforced across all tags for zero-FOUC rendering, pricing transparency (10 000 MDL fee + 40 000 MDL deposit), banned words: 0 |
 
 ---
 
@@ -72,6 +73,7 @@ Woloshin Club landing page — single self-contained HTML file at `/Users/pro/Do
 | 2026-09-25 | S05 numbers floating above cards with shadow | Vlad: "реалистично (тень и тд)" |
 | 2026-09-25 | S10 rings with Aston Martin style (ticks, gold rule) | Vlad: "как дорогой дашбор от астон мартин" |
 | 2026-09-25 | Section padding clamp(48px, 7vh, 80px) desktop | Tightened from clamp(64px, 9vh, 104px) per "большие пустоты" |
+| 2026-09-25 | Full natural copywriting rewrite across all 14 sections | Vlad: "не нравятся формулировки они ИИ слоп, так не говорят". Replaced artificial tropes with dry, concrete, grounded human language. Enforced default Russian textContent across all 145 translatable elements. Banned words: 0. |
 
 ---
 
