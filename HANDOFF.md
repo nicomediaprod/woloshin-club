@@ -60,6 +60,7 @@ Woloshin Club landing page — single self-contained HTML file at `/Users/pro/Do
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-09-25 | Symlinked backgrounds/ and agents/ to root | Enables index.html at project root to load SVG backgrounds and aligns with README.md/AGENTS.md paths |
 | 2026-09-25 | Kurale + Plus Jakarta Sans | Brand fonts from hotels.banya.md |
 | 2026-09-25 | Russian primary, Romanian secondary | Vlad: "для меня важнее русский язык при разработке" |
 | 2026-09-25 | No new colors, only brand tokens | Vlad: avoid "Moldovan premium" look |
