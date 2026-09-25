@@ -17,7 +17,8 @@ Woloshin Club landing page — single self-contained HTML file at `/Users/pro/Do
 | v1 (archive/index.html) | ~955 | First Romanian-only build, before audit |
 | v2 | 2,764 | Counter fixes, placeholder S04/S11, scarcity grid integrated |
 | v3 | 3,002 | + 5 in-app fixes (centering, glow, floating numbers, Aston rings, abstract silhouette) + 8 SVG backgrounds wired |
-| **v5 (current)** | **3,415** | Official management facts integrated across all sections (50 участников - Одно сообщество; 50k MDL: 10k fee + 40k deposit; именной халат и шапка; персональный администратор; 10% скидка на все услуги; условия приватных бань; приоритет бронирования; ранний доступ; 3 бесплатных события; разовый гость; чат в Telegram; 2 ужина с основателем; подарок на день рождения от Woloshin Banya), 100% RU/RO parity (145/145), default Russian textContent, banned words: 0 |
+| **v5 (current index.html)** | **3,415** | Official management facts integrated across all sections (50 участников - Одно сообщество; 50k MDL: 10k fee + 40k deposit; именной халат и шапка; персональный администратор; 10% скидка на все услуги; условия приватных бань; приоритет бронирования; ранний доступ; 3 бесплатных события; разовый гость; чат в Telegram; 2 ужина с основателем; подарок на день рождения от Woloshin Banya), 100% RU/RO parity (145/145), default Russian textContent, banned words: 0 |
+| **v2.html (Standalone Fact-Driven Edition)** | **1,298** | Отдельная вторая версия лендинга, собранная строго по исходным данным руководства без выдуманной информации (50 членов, 50k MDL [10k взнос + 40k депозит], личные атрибуты, условия, закрытые события, ужины с основателем, подарки). Полный премиальный стиль, Three.js аура частиц, зерно, мгновенный переключатель RU/RO (88/88), 0 запрещенных слов, протестировано на десктопе 1440px и мобильных 390/320px. |
 
 ---
 
